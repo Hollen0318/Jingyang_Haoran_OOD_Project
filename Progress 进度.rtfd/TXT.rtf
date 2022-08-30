@@ -1,9 +1,9 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2639
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset134 STSongti-SC-Regular;\f1\froman\fcharset0 TimesNewRomanPSMT;\f2\froman\fcharset0 TimesNewRomanPS-BoldMT;
 }
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww14960\viewh15860\viewkind1
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww9980\viewh15880\viewkind1
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 \'bc\'c7\'c2\'bc\'d4\'c4\'b6\'c1\'a1\'a2\'b4\'fa\'c2\'eb\'b5\'c8\'bd\'f8\'b6\'c8
@@ -17,8 +17,8 @@
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 
-\f2\b\fs28 \cf0 ABSTARCT
-\f1\b0\fs24 \
+\f2\b \cf0 ABSTRACT
+\f1\b0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
 \
@@ -29,10 +29,10 @@ The
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f2\b \cf0 Rationale
-\f1\b0 : The correctly classified examples tend to haver greater maximum probabilities than erroneously classified and OOD examples. \
+\f1\b0 : The correctly classified examples tend to have greater maximum probabilities than erroneously classified OOD examples. \
 \
 
-\f2\b Method
+\f2\b The method
 \f1\b0  is that the paper test the performance over many tasks in various fields\
 \
 The 
@@ -41,15 +41,77 @@ The
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 
-\f2\b\fs26 \cf0 INTRODUCTION\
+\f2\b \cf0 INTRODUCTION\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\fs24 \cf0 Gaussians Noise
+Gaussians Noise
 \f1\b0 : named after Carl Gauss, is a term from signal processing theory denoting a kind of signal noise that has a probability density function equal to that of the normal distribution (which is also known as the Gaussian distribution). \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 \cf0 {{\NeXTGraphic Screen Shot 2022-08-29 at 6.21.32 PM.png \width4160 \height1360 \appleattachmentpadding0 \appleembedtype0 \appleaqc
 }¬}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\b \cf0 Contribution 1: 
+\f1\b0 \cf2 \expnd0\expndtw0\kerning0
+This new method evaluates the 
+\f2\b quality of a neural network\'92s input reconstruction
+\f1\b0  to determine if an example is abnormal. \
+\
+
+\f2\b \cf0 \kerning1\expnd0\expndtw0 Contribution 2: 
+\f1\b0 Another contribution of this work is the designation of 
+\f2\b standard tasks and evaluation
+\f1\b0  metrics for assessing the automatic detection of errors and out-of-distribution examples. \
+\
+In summary, while softmax classifier probabilities are not directly useful as confidence estimates, estimating model confidence is not as bleak as previously believed. This paper 
+\f2\b creates a strong baseline 
+\f1\b0 for detecting errors and out-of-distribution examples which we hope future research surpasses. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
+
+\f2\b \cf0 PROBLEM FORMULATION AND EVALUATION\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Problem 1: 
+\f1\b0 The first is 
+\f2\b error and success prediction
+\f1\b0 . Can we predict whether a trained classifier will 
+\f2\b make an error
+\f1\b0  on a particular held-out test example\'92 can we predict if it will 
+\f2\b correctly classify said examples
+\f1\b0 ?\
+\
+
+\f2\b Problem 2: 
+\f1\b0 The second is 
+\f2\b in- and out-of-distribution detection
+\f1\b0 . Can we predict 
+\f2\b whether a test example is from a different distribution
+\f1\b0  from the training data; can we predict 
+\f2\b if it is from within the same
+\f1\b0  
+\f2\b distribution
+\f1\b0 ? \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
+
+\f2\b \cf0 \ul \ulc0 To evaluate the solution, this paper uses two evaluation metrics. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ulnone Trade-off: 
+\f1\b0 The score threshold depends upon the trade-off between false negatives (fn) and false positive (fp). \
+\
+
+\f2\b Model employed: 
+\f1\b0 The Area Under the Receiver Operating Characteristics curve (AUROC) metric, which is a threshold-independent performance evaluation. \
+\
+
+\f2\b AUROC (Area Under the Receiver Operating Characteristics Curve): 
+\f1\b0 Is a measurement of the performance of classification model. It is threshold independent. \
+\
+
+\f2\b AUPR (Area Under the Precision-Recall Curve): 
+\f1\b0 Sometimes deemed more informative. It is similar idea but with two other rate which is recall and precision. \
+\
 }
