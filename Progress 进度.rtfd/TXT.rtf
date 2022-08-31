@@ -1,6 +1,6 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2639
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset134 STSongti-SC-Regular;\f1\froman\fcharset0 TimesNewRomanPSMT;\f2\froman\fcharset0 TimesNewRomanPS-BoldMT;
-}
+\f3\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
 \margl1440\margr1440\vieww9980\viewh15880\viewkind1
@@ -41,7 +41,7 @@ The
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 
-\f2\b \cf0 INTRODUCTION\
+\f2\b \cf0 1 INTRODUCTION\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
 Gaussians Noise
@@ -70,7 +70,7 @@ In summary, while softmax classifier probabilities are not directly useful as co
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 
-\f2\b \cf0 PROBLEM FORMULATION AND EVALUATION\
+\f2\b \cf0 2 PROBLEM FORMULATION AND EVALUATION\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 Problem 1: 
@@ -114,4 +114,24 @@ In summary, while softmax classifier probabilities are not directly useful as co
 \f2\b AUPR (Area Under the Precision-Recall Curve): 
 \f1\b0 Sometimes deemed more informative. It is similar idea but with two other rate which is recall and precision. \
 \
-}
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
+
+\f2\b \cf0 3 SOFTMAX PREDICTION PROBABILITY AS A BASELINE\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Maximum softmax probability 
+\f1\b0 is simply the probability that the predicted class has. \
+\
+For example, the output of the neural networks is [10, 5, 2], corresponding to the class 0, 1, 2 accordingly. Then we use the softmax function to convert it into an array of possibility [0.99, 0.009, 0.001]. \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3 \cf0 {{\NeXTGraphic Pasted Graphic.jpg \width2000 \height2660 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+
+\f1 Then we can see that the msp for the correctly classified and incorrectly classified have very 
+\f2\b different msp distribution
+\f1\b0 . \
+\
+In these two groups we also get the area under the PR and ROC curves. Basically these areas are used to }
